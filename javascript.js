@@ -7,3 +7,17 @@
 //what happens when clock out is clicked
 //1. grab current time as soon as user clicks clock out and append to table
 
+
+var database= firebase.database();
+var name = "";
+var role= "";
+var clockIn = "";
+var clockOut= "";
+
+
+$("#clockIn").on("click", function(event){
+    event.preventDefault();
+    name = $("#name").val();
+    role = $("#role").val();
+    clockIn= $("#clockIn").val();
+})
