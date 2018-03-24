@@ -12,7 +12,7 @@ $("#submit").on("click", function(event) {
   var empStart = moment($("#startDate-input").val().trim(), "DD/MM/YY").format("X");
   var empRate = $("#rate-input").val().trim();
 
-  // Creates local "temporary" object for holding employee data
+  // Creates local object for holding employee data
   var newEmp = {
     name: empName,
     role: empRole,
