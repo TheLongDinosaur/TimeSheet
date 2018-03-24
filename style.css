@@ -1,3 +1,12 @@
 table {
     margin-top: 40px;
 }
+
+.jumbotron {
+    text-align: center;
+}
+
+.row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

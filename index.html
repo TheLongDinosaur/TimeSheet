@@ -10,7 +10,8 @@
 </head>
 <body>
     <div class="jumbotron">
-        <h1>Time Sheet</h1>
+        <h1>Employee Data Management</h1>
+        <h3>Employee Information and Time Sheet</h3>
     </div>
     
     <div class="container">
@@ -34,11 +35,52 @@
             
             <div class="row">
                 <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="first">Start Date (MM/DD/YY)</label>
+                        <input type="text" class="form-control" placeholder="" id="startDate">
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="monthlyRate">Monthly Rate</label>
+                        <input type="text" class="form-control" placeholder="" id="monthlyRate">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+            <table class="table" id="employeeInfo">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">Monthly Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="memeberName">name</th>
+                            <td id="memberRole">...</td>
+                            <td id="memberStartDate">...</td>
+                            <td id="memberRate">..</th>
+                        </tr>  
+                    </tbody>
+                </table>
+            <hr>
+            <br><br>
+            
+            <div class="row">
+                <div class="col-md-6">
                     <div class="col-md-6">
                         <button type="ClockIn" class="btn btn-primary" id="clockIn">Clock In</button>   
                     </div>  
                 </div>
-
+                
                 <div class="row">
                     <div class="col-md-6">
                         <button type="ClockOut" class="btn btn-primary" id="clockOut">Clock Out</button>   
@@ -51,15 +93,13 @@
             <thead>
                 <tr>
                     <th scope="col">Name</th>
-                    <th scope="col">Role</th>
                     <th scope="col">Time In</th>
-                    <th scope="col">Time</th>
+                    <th scope="col">Time Out</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td id="memeberName">name</th>
-                    <td id="memberRole">...</td>
                     <td id="todayTimeIn">...</td>
                     <td id="todayTimeOut">...</td>
                 </tr>  
@@ -74,19 +114,19 @@
         <script>
             // Initialize Firebase
             var config = {
-            apiKey: "AIzaSyAT-WjgBD1xlrmV4dCIL9QmA-orfW8u_Q0",
-            authDomain: "timesheet-4a6c8.firebaseapp.com",
-            databaseURL: "https://timesheet-4a6c8.firebaseio.com",
-            projectId: "timesheet-4a6c8",
-            storageBucket: "",
-            messagingSenderId: "556568572388"
+                apiKey: "AIzaSyAT-WjgBD1xlrmV4dCIL9QmA-orfW8u_Q0",
+                authDomain: "timesheet-4a6c8.firebaseapp.com",
+                databaseURL: "https://timesheet-4a6c8.firebaseio.com",
+                projectId: "timesheet-4a6c8",
+                storageBucket: "",
+                messagingSenderId: "556568572388"
             };
             firebase.initializeApp(config);
         </script>
         <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
         <script src="javascript.js"></script>
     </tail>
     </html>
