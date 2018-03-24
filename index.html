@@ -21,14 +21,14 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="first">First Name</label>
-                        <input type="text" class="form-control" placeholder="" id="name">
+                        <input type="text" class="form-control" placeholder="" id="name-input">
                     </div>
                 </div>
                 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="role">Role</label>
-                        <input type="text" class="form-control" placeholder="" id="role">
+                        <input type="text" class="form-control" placeholder="" id="role-input">
                     </div>
                 </div>
             </div>
@@ -37,14 +37,14 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="first">Start Date (MM/DD/YY)</label>
-                        <input type="text" class="form-control" placeholder="" id="startDate">
+                        <input type="text" class="form-control" placeholder="" id="startDate-input">
                     </div>
                 </div>
                 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="monthlyRate">Monthly Rate</label>
-                        <input type="text" class="form-control" placeholder="" id="monthlyRate">
+                        <input type="text" class="form-control" placeholder="" id="rate-input">
                     </div>
                 </div>
             </div>
@@ -54,61 +54,69 @@
                 </div>
             </div>
             <table class="table" id="employeeInfo">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Start Date</th>
+                        <th>Monthly Rate</th>
+                        <th>Months Worked</th>
+                        <th>Monthly Rate ($)</th>
+                        <th>Total Billed ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="memeberName">name</th>
+                        <td id="memberRole">Role</td>
+                        <td id="memberStartDate">Start Date</td>
+                        <td id="memberRate">Rate $</th>
+                    </tr>  
+                </tbody>
+            </table>
+            <hr>
+            <br><br>
+        </form>
+    </div>
+            
+            <div class="container">
+                <form>
+                    <h2>Employee Time Sheet</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-md-6">
+                                <button type="ClockIn" class="btn btn-primary" id="clockIn">Clock In</button>   
+                            </div>  
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="ClockOut" class="btn btn-primary" id="clockOut">Clock Out</button>   
+                            </div> 
+                        </div>
+                    </div>  
+                </form>
+                
+                <table class="table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Role</th>
-                            <th>Start Date</th>
-                            <th>Monthly Rate</th>
-                            <th>Months Worked</th>
-                            <th>Monthly Rate ($)</th>
-                            <th>Total Billed ($)</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Time In</th>
+                            <th scope="col">Time Out</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td id="memeberName">name</th>
-                            <td id="memberRole">...</td>
-                            <td id="memberStartDate">...</td>
-                            <td id="memberRate">..</th>
-                        </tr>  
-                    </tbody>
-                </table>
-            <hr>
-            <br><br>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="col-md-6">
-                        <button type="ClockIn" class="btn btn-primary" id="clockIn">Clock In</button>   
-                    </div>  
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <button type="ClockOut" class="btn btn-primary" id="clockOut">Clock Out</button>   
-                    </div> 
-                </div>
-            </div>  
-        </form>
-        
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Time In</th>
-                    <th scope="col">Time Out</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="memeberName">name</th>
-                    <td id="todayTimeIn">...</td>
-                    <td id="todayTimeOut">...</td>
-                </tr>  
-            </tbody>
-        </table>
-    </div>      
+                                <td id="todayTimeIn">...</td>
+                                <td id="todayTimeOut">...</td>
+                            </tr>  
+                        </tbody>
+                    </table>
+                </form>
+            </div>        
+        </div>      
         
         
     </body>
