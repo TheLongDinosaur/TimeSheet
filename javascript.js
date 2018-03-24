@@ -15,12 +15,6 @@ var clockIn = "";
 var clockOut= "";
 
 
-$("#clockIn").on("click", function(event){
-    event.preventDefault();
-    name = $("#name").val();
-    role = $("#role").val();
-    clockIn= $("#clockIn").val();
-})
 
 var clock = {
     now:Date.now(),
@@ -52,8 +46,17 @@ var clock = {
                                 ':' + seconds.substr(-2);
             }
 };
-console.log(clock.format(clock.now));
+// console.log(clock.format(clock.now));
 //returns 10/8/2015 21:02:16
 
-console.log(clock.format(clock.now + clock.add(10, 'minutes'))); 
+// console.log(clock.format(clock.now + clock.add(10, 'minutes'))); 
 //returns 10/8/2015 21:08:18
+
+
+$("#clockIn").on("click", function(event){
+    event.preventDefault();
+    name = $("#name").val().trim();
+    role = $("#role").val().trim();
+    clockIn= clock.format(clock.now);
+    console.log(name, role, clockIn);
+})
