@@ -6,12 +6,69 @@
     <title>TimeSheet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
+    <div class="jumbotron">
+        <h1>Time Sheet</h1>
+    </div>
     
-</body>
-<tail>
-    <script src="javascript.js"></script>
-</tail>
-</html>
+    <div class="container">
+        <form>
+            <h2>Member Information</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="first">First Name</label>
+                        <input type="text" class="form-control" placeholder="" id="name">
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <input type="text" class="form-control" placeholder="" id="role">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-6">
+                        <button type="ClockIn" class="btn btn-primary" id="clockIn">Clock In</button>   
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="ClockOut" class="btn btn-primary" id="clockOut">Clock Out</button>   
+                    </div> 
+                </div>
+            </div>  
+        </form>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Time In</th>
+                    <th scope="col">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>name</th>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>  
+            </tbody>
+        </table>
+    </div>      
+        
+        
+    </body>
+    <tail>
+        <script src="javascript.js"></script>
+    </tail>
+    </html>
