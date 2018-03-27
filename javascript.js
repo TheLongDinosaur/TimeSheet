@@ -54,9 +54,45 @@ var clock = {
 
 
 $("#clockIn").on("click", function(event){
+//    grab data from forms
     event.preventDefault();
     name = $("#name").val().trim();
     role = $("#role").val().trim();
     clockIn= clock.format(clock.now);
     console.log(name, role, clockIn);
+    var employee = {
+        name: name,
+        role: role,
+        clockIn: clockIn,
+        clockOut: clockOut
+    }
+
+    // push data to firebase
+    database.ref().push(employee);
+
+    // clear forms
+    $("#name").val("");
+    $("#role").val("");
+})
+
+
+database.ref().on("child_added", function (childSnapshot, prevChildKey){
+    console.log(childSnapshot.val());
+
+    var name = childSnapshot.val().name;
+    $(name).attr("id", childSnapshot.val().name);
+    var role = childSnapshot.val().role;
+    var clockIn = childSnapshot.val().clockIn;
+
+    $(".table").append("<tr id='"+name+"'><td>" + name + "</td><td>" + role + "</td><td>" + clockIn + "</td>");
+})
+
+
+// time to create results for clock out.... add id to row to be called
+$("#clockOut").on("click", function(event){
+    event.preventDefault();
+    clockOut = clock.format(clock.now)
+    name = $("#name").val().trim();
+    $("#"+name).append("<td>" + clockOut + "</td>");
+    database.ref().set(employee.clockOut)
 })
