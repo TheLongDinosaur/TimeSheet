@@ -98,3 +98,4 @@ $("#clockOut").on("click", function(event){
     database.ref().set(employee.clockOut)
 })
 //Firebase stuff....
+        
