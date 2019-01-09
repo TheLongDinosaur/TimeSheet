@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+var clock = {
+    now:Date.now(),
+    add:function (qty, units) {
+            switch(units.toLowerCase()) {
+                case 'weeks'   :  val = qty * 1000 * 60 * 60 * 24 * 7;  break;
+                case 'days'    :  val = qty * 1000 * 60 * 60 * 24;  break;
+                case 'hours'   :  val = qty * 1000 * 60 * 60;  break;
+                case 'minutes' :  val = qty * 1000 * 60;  break;
+                case 'seconds' :  val = qty * 1000;  break;
+                default       :  val = undefined;  break;
+                }
+            return val;
+            },
+    format:function (timestamp){
+            var date = new Date(timestamp);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hours = date.getHours();
+            var minutes = "0" + date.getMinutes();
+            var seconds = "0" + date.getSeconds();
+            // Will display time in xx/xx/xxxx 00:00:00 format
+            return formattedTime = month + '/' + 
+                                day + '/' + 
+                                year + ' ' + 
+                                hours + ':' + 
+                                minutes.substr(-2) + 
+                                ':' + seconds.substr(-2);
+            }
+};
+console.log(clock.format(clock.now));
+//returns 10/8/2015 21:02:16
+
+console.log(clock.format(clock.now + clock.add(10, 'minutes'))); 
+//returns 10/8/2015 21:08:18
+    </script>
+</body>
+</html>
+
+
